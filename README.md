@@ -1,26 +1,16 @@
-# Open Research Seeds
+# Research Seeds 🌱
 
 **Concrete research ideas, free to good homes.**
 
-This is a curated collection of research ideas — each with a clear intuition, a concrete first experiment, and enough supporting material (slides, code, readings) to get started. They come from problems we found genuinely interesting but won't pursue ourselves.
+Academic ML research is in a difficult moment. The problems that attract the most attention — scaling frontier models, massive RL runs, billion-parameter video generation — are increasingly defined by compute budgets that no university lab can match. Junior PhD students feel this acutely: it's hard to commit years to a direction when an industry lab might ship something similar next quarter with 1,000× your resources.
+
+The ideas here are chosen with that pressure in mind. They are *deliberately unconventional* — grounded in mechanisms from dynamical systems, neuroscience, physics, and optimization rather than the scaling playbook. They're the kind of problems where the advantage is in the *thinking*, not the FLOPS: where a well-designed experiment on a single GPU can produce an insight that no amount of compute would find by brute force. You can take your time with these. No one is about to scoop you.
+
+Each idea comes with a clear intuition, a concrete first experiment, risks, annotated readings, and enough supporting material to get started. They come from problems we found genuinely interesting but won't pursue ourselves.
 
 If you're a junior PhD student looking for a direction, or a senior student with collaborators to find, start here.
 
 ---
-
-## Website
-
-This repo can be published directly with GitHub Pages. The public page is
-[`index.html`](./index.html); it loads idea metadata from [`seeds.json`](./seeds.json)
-and renders the markdown files in each idea folder. The website groups seeds by
-topic tabs such as multimodal learning, hardware, and model architecture.
-
-Recommended GitHub Pages setup:
-
-1. Create a standalone repo, for example `open-research-seeds`.
-2. Copy the contents of this folder into that repo.
-3. In GitHub repo settings, enable Pages from the `main` branch root.
-4. The page will be available at `https://<username>.github.io/open-research-seeds/`.
 
 ## How This Works
 
@@ -47,7 +37,6 @@ Each idea lives in its own folder under [`ideas/`](./ideas/) with a standard car
 
 - 📂 [Browse all ideas](./ideas/)
 - 📝 [Idea card template](./ideas/_template/)
-- 🧭 [Website metadata](./seeds.json)
 - 🤝 [How to contribute](./CONTRIBUTING.md)
 - 💬 [Discussions](../../discussions) — find collaborators, claim ideas, share progress
 
@@ -55,7 +44,7 @@ Each idea lives in its own folder under [`ideas/`](./ideas/) with a standard car
 
 ## Why This Exists
 
-Generating research ideas is one of the hardest parts of a PhD, and it's rarely taught. Most "open problem" lists are either too vague to act on or too coupled to a specific lab's infrastructure. We wanted something in between: ideas with enough structure to start, enough openness to make your own, and a lightweight way to find others thinking about the same things.
+Generating research ideas is one of the hardest parts of a PhD, and it's rarely taught. The current landscape makes it harder: most "open problem" lists are either too vague to act on, too coupled to a specific lab's infrastructure, or point toward directions where a well-funded team will outrun you on compute alone. We wanted something different: ideas where the intellectual contribution *is* the contribution, with enough structure to start, enough openness to make your own, and a lightweight way to find others thinking about the same things.
 
 ## License
 

@@ -4,13 +4,15 @@ We welcome ideas from senior PhD students, postdocs, and researchers. The goal i
 
 ## What Makes a Good Seed
 
-A good research seed has three things:
+A good research seed has four things:
 
 1. **A real insight** — not "someone should work on X" but "here's *why* X should work, and here's the mechanism." The reader should finish the intuition section thinking "oh, that's clever."
 
 2. **A concrete entry point** — the minimal first experiment. What do you train, on what data, and what do you measure? If you see result Y, you're on the right track. A junior student should be able to start within a few weeks of reading this.
 
 3. **Honest background requirements** — what does someone need to know to attempt this? Be specific ("comfortable with ODEs and has trained a contrastive model before") not vague ("strong math background").
+
+4. **Scoop-resistant by design** — the idea should live in a space where the advantage is in the thinking, not in the compute. If a well-funded lab could trivially subsume it by scaling up a standard recipe, it doesn't belong here. The best seeds draw on unconventional mechanisms — from neuroscience, physics, dynamical systems, optimization theory — that reward careful design over brute force.
 
 Ideas you're actively pursuing don't belong here. Ideas you've *tried* and abandoned with a note about what went wrong are especially welcome.
 
@@ -22,7 +24,7 @@ Ideas you're actively pursuing don't belong here. Ideas you've *tried* and aband
 2. Copy `ideas/_template/` to `ideas/your-idea-name/`
 3. Fill in the template — see existing ideas for calibration
 4. Add any materials (slides, code, figures) to your idea folder
-5. Add an entry to `seeds.json` so the website can render the idea under the right topic
+5. Add a row to the index table in the root `README.md`
 6. Open a pull request
 
 Your PR description should include a one-paragraph summary of the idea. We'll review for clarity and quality, possibly suggest edits, and merge once it's ready.
@@ -63,32 +65,6 @@ ideas/your-idea-name/
 ```
 
 Keep files reasonable in size. For large datasets or model checkpoints, link externally rather than committing them.
-
-## Updating the Website
-
-The GitHub Pages site reads from `seeds.json`. After adding a new idea folder,
-add one metadata entry:
-
-```json
-{
-  "slug": "your-idea-name",
-  "topic": "model-architecture",
-  "title": "Your Idea Title",
-  "hook": "One sentence that makes the idea legible and interesting.",
-  "background": "required background",
-  "rampUp": "2-3 weeks",
-  "contributor": "Your Name",
-  "affiliation": "Your Affiliation",
-  "tags": ["area", "method"],
-  "readme": "ideas/your-idea-name/README.md",
-  "references": "ideas/your-idea-name/references.md"
-}
-```
-
-Keep the `slug` identical to the folder name so deep links work. The `topic`
-must match one of the topic slugs in the top-level `topics` list in
-`seeds.json` such as `multimodal-learning`, `hardware`, or
-`model-architecture`.
 
 ## Review Process
 
