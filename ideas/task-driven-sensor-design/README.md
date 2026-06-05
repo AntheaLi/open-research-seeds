@@ -22,6 +22,8 @@ The "difficulty" signal adds another layer: tasks that humans find effortlessly 
 
 ## Entry Point
 
+**Phase 0 - Learn how the sensors work**: Before writing any code, you need to understand how these sensors work. You can check out the work: [Learning the signatures of the human grasp using a scalable tactile glove](https://www.nature.com/articles/s41586-019-1234-z).
+
 **Phase 1 — Task-Contact Mapping (simulation)**: Before touching real hardware, you can use existing grasping simulators (e.g., Isaac Gym / MuJoCo with contact-rich assets) to generate contact heatmaps across a hand mesh for a diverse task set. Use the ContactDB dataset or DexYCB as a starting point — both provide human grasp contact maps for many objects. Aggregate across tasks to build a "sensing demand map" over the hand surface. 
 
 **Phase 2 — Electrode Placement Optimization**: Formulate sensor placement as a discrete optimization problem. Given N electrodes to place on a hand surface, and a continuous contact importance map from Phase 1, maximize the expected task-relevant information captured, for example, your task can be object recognition from tactile maps. 
@@ -62,6 +64,8 @@ Key papers to start with:
 2. **Lambeta et al. (2020)** — [*DIGIT: A Novel Design for a Low-Cost Compact High-Resolution Tactile Sensor with Application to In-Hand Manipulation*](https://arxiv.org/abs/2005.14679) — A state-of-the-art tactile sensor design. Study the engineering trade-offs they made — your optimization should be able to reproduce or improve on their decisions.
 
 3. **Ward-Cherrier et al. (2018)** — [*The TacTip Family: Soft Optical Tactile Sensors with 3D-Printed Biomimetic Morphologies*](https://doi.org/10.1089/soro.2017.0052) — Biomimetic sensor design that explicitly tries to replicate human mechanoreceptor layout. This is your "biomimetic baseline" — does optimization recover something similar, or something better?
+
+4. **Sundaram et al. (2019)** - [*Learning the signatures of the human grasp using a scalable tactile glove*](https://www.nature.com/articles/s41586-019-1234-z) - How the tactile sensors work. 
 
 ## Discussion
 
