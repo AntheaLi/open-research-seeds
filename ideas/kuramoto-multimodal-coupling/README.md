@@ -1,9 +1,11 @@
-# Kuramoto-Inspired Multimodal Coupling
+# Self-Supervised Multimodal Learning through Kuramoto-Inspired Coupling
 
 > **One-sentence hook**: Learn cross-modal representations through oscillatory synchronization dynamics — the way the brain binds vision, audio, and touch — instead of contrastive loss alignment.
 
 **Contributor**: [Anthea Li](https://github.com/AntheaLi) · MIT CSAIL  
-**Background needed**: dynamical systems (ODEs, phase oscillators) + multimodal ML (CLIP-level familiarity)  
+
+**Background needed**: dynamical systems (ODEs, phase oscillators) + multimodal ML (CLIP-level familiarity)
+
 **Estimated ramp-up**: ~2–3 weeks to first experiment
 
 ---
@@ -53,15 +55,17 @@ See [references.md](./references.md) for the full annotated reading list.
 
 Key papers to start with:
 
-1. **Kuramoto (1975)** — *Self-entrainment of a population of coupled non-linear oscillators* — The original Kuramoto model. Read for the order parameter formulation and the phase transition at critical coupling — this is the core mathematical tool.
+1. **Miyato et al. (2024)** - [*Artificial Kuramoto Oscillatory Neurons*](https://takerum.github.io/akorn_project_page/) - dynamical alternative to traditional threshold units that binds neurons through synchronization dynamics to enhance performance across diverse tasks, demonstrating the value of foundational dynamical representations.
 
-2. **Sengupta et al. (2022)** — [*Predicting brain synchronization from functional connectivity*](https://doi.org/10.1038/s41467-022-29632-9) — Establishes the empirical connection between Kuramoto dynamics and real cross-modal binding in cortex.
+2. **Kuramoto (1975)** — *Self-entrainment of a population of coupled non-linear oscillators* — The original Kuramoto model. Read for the order parameter formulation and the phase transition at critical coupling — this is the core mathematical tool.
 
-3. **Radford et al. (2021)** — [*Learning Transferable Visual Models From Natural Language Supervision (CLIP)*](https://arxiv.org/abs/2103.00020) — The baseline to beat/complement. Understand what static contrastive alignment gives you and where it falls short (hard negatives, partial correspondence).
+3. **Sengupta et al. (2022)** — [*Predicting brain synchronization from functional connectivity*](https://doi.org/10.1038/s41467-022-29632-9) — Establishes the empirical connection between Kuramoto dynamics and real cross-modal binding in cortex.
 
-4. **Chen et al. (2018)** — [*Neural Ordinary Differential Equations*](https://arxiv.org/abs/1806.07366) — The technical backbone for making ODE dynamics differentiable. The adjoint method section is what you need for efficient backprop through the Kuramoto dynamics.
+4. **Radford et al. (2021)** — [*Learning Transferable Visual Models From Natural Language Supervision (CLIP)*](https://arxiv.org/abs/2103.00020) — The baseline to beat/complement. Understand what static contrastive alignment gives you and where it falls short (hard negatives, partial correspondence).
 
-5. **Gong et al. (2023)** — [*ImageBind*](https://arxiv.org/abs/2305.05665) — Multi-modal extension of CLIP to six modalities. Note how they handle the combinatorial problem of pairwise alignment — Kuramoto coupling would give a more principled solution.
+5. **Chen et al. (2018)** — [*Neural Ordinary Differential Equations*](https://arxiv.org/abs/1806.07366) — The technical backbone for making ODE dynamics differentiable. The adjoint method section is what you need for efficient backprop through the Kuramoto dynamics.
+
+6. **Gong et al. (2023)** — [*ImageBind*](https://arxiv.org/abs/2305.05665) — Multi-modal extension of CLIP to six modalities. Note how they handle the combinatorial problem of pairwise alignment — Kuramoto coupling would give a more principled solution.
 
 ## Discussion
 
