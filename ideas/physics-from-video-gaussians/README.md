@@ -3,7 +3,9 @@
 > **One-sentence hook**: Use 2D dynamic Gaussians as a learned spatial discretization of video, then apply classical dynamics identification (DMD / SINDy) to the Gaussian trajectories to recover governing equations — bridging video pixels to interpretable physics without end-to-end neural ODEs.
 
 **Contributor**: [Anthea Li](https://github.com/AntheaLi) · MIT CSAIL  
+
 **Background needed**: Gaussian splatting (2D/3D) + dynamical systems (DMD, Koopman theory, or SINDy basics)  
+
 **Estimated ramp-up**: ~2–3 weeks to first experiment (pyDMD and PySINDy handle the heavy lifting)
 
 ---
