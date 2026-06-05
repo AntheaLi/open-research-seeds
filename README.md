@@ -13,7 +13,7 @@ If you're a junior PhD student looking for a direction, or a senior student with
 This repo can be published directly with GitHub Pages. The public page is
 [`index.html`](./index.html); it loads idea metadata from [`seeds.json`](./seeds.json)
 and renders the markdown files in each idea folder. The website groups seeds by
-topic tabs such as multimodal learning, sensor design, and model architecture.
+topic tabs such as multimodal learning, hardware, and model architecture.
 
 Recommended GitHub Pages setup:
 

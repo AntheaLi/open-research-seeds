@@ -87,7 +87,7 @@ add one metadata entry:
 
 Keep the `slug` identical to the folder name so deep links work. The `topic`
 must match one of the topic slugs in the top-level `topics` list in
-`seeds.json` such as `multimodal-learning`, `sensor-design`, or
+`seeds.json` such as `multimodal-learning`, `hardware`, or
 `model-architecture`.
 
 ## Review Process

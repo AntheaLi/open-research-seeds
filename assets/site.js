@@ -12,6 +12,54 @@
   var activeTopic = null;
   var activeSeed = null;
   var activeView = 'overview';
+  var fallbackData = {
+    topics: [
+      {
+        slug: 'multimodal-learning',
+        label: 'Multimodal Learning',
+        description: 'Ideas about multimodal representation learning, world models, and cross-modal alignment.'
+      },
+      {
+        slug: 'hardware',
+        label: 'Hardware',
+        aliases: ['sensor-design'],
+        description: 'Ideas about tactile sensing, embodied data, and task-driven hardware.'
+      },
+      {
+        slug: 'model-architecture',
+        label: 'Model Architecture',
+        description: 'Ideas about mechanisms, efficient architectures, and hardware-aware model design.'
+      }
+    ],
+    seeds: [
+      {
+        slug: 'kuramoto-multimodal-coupling',
+        topic: 'multimodal-learning',
+        title: 'Kuramoto-Inspired Multimodal Coupling',
+        hook: 'Learn cross-modal representations through oscillatory synchronization dynamics instead of contrastive loss alignment.',
+        background: 'Dynamical systems + multimodal ML',
+        rampUp: '2-3 weeks',
+        contributor: 'Anthea Li',
+        affiliation: 'MIT CSAIL',
+        tags: ['multimodal', 'dynamics', 'representation learning'],
+        readme: 'ideas/kuramoto-multimodal-coupling/README.md',
+        references: 'ideas/kuramoto-multimodal-coupling/references.md'
+      },
+      {
+        slug: 'task-driven-sensor-design',
+        topic: 'hardware',
+        title: 'Task-Driven Sensor Design',
+        hook: 'Learn where to place tactile sensors by watching which manipulation tasks humans find easy.',
+        background: 'Robotics + optimization',
+        rampUp: '3-4 weeks',
+        contributor: 'Anthea Li',
+        affiliation: 'MIT CSAIL',
+        tags: ['robotics', 'tactile sensing', 'optimization'],
+        readme: 'ideas/task-driven-sensor-design/README.md',
+        references: 'ideas/task-driven-sensor-design/references.md'
+      }
+    ]
+  };
 
   function escapeHtml(value) {
     return String(value)
@@ -136,7 +184,9 @@
   }
 
   function getTopic(slug) {
-    return topics.filter(function (topic) { return topic.slug === slug; })[0] || topics[0];
+    return topics.filter(function (topic) {
+      return topic.slug === slug || (topic.aliases || []).indexOf(slug) !== -1;
+    })[0] || topics[0];
   }
 
   function getSeed(slug) {
@@ -284,34 +334,37 @@
     });
   });
 
+  function initialise(data) {
+    if (Array.isArray(data)) {
+      seeds = data;
+      topics = [{ slug: 'all', label: 'All Seeds', description: 'All research seeds.' }];
+      seeds.forEach(function (seed) { seed.topic = 'all'; });
+    } else {
+      topics = data.topics || [];
+      seeds = data.seeds || [];
+    }
+
+    var requestedSlug = window.location.hash.replace('#', '');
+    var requestedSeed = getSeed(requestedSlug);
+    var requestedTopic = getTopic(requestedSlug);
+
+    if (requestedSeed) {
+      selectSeed(requestedSeed.slug, 'overview');
+    } else {
+      activeTopic = requestedTopic || topics[0];
+      renderTopicTabs();
+      renderSeedCards();
+      setReaderFolded();
+    }
+  }
+
+  initialise(fallbackData);
+
   fetch('seeds.json')
-    .then(function (response) { return response.json(); })
-    .then(function (data) {
-      if (Array.isArray(data)) {
-        seeds = data;
-        topics = [{ slug: 'all', label: 'All Seeds', description: 'All research seeds.' }];
-        seeds.forEach(function (seed) { seed.topic = 'all'; });
-      } else {
-        topics = data.topics || [];
-        seeds = data.seeds || [];
-      }
-
-      var requestedSlug = window.location.hash.replace('#', '');
-      var requestedSeed = getSeed(requestedSlug);
-      var requestedTopic = getTopic(requestedSlug);
-
-      if (requestedSeed) {
-        selectSeed(requestedSeed.slug, 'overview');
-      } else {
-        activeTopic = requestedTopic || topics[0];
-        renderTopicTabs();
-        renderSeedCards();
-        setReaderFolded();
-      }
+    .then(function (response) {
+      if (!response.ok) throw new Error('Could not load seeds.json');
+      return response.json();
     })
-    .catch(function () {
-      readerTitle.textContent = 'Could not load seeds';
-      seedReader.classList.remove('is-folded');
-      readerContent.innerHTML = '<p class="error-note">The seed index could not be loaded. Make sure this page is served from GitHub Pages or a local web server.</p>';
-    });
+    .then(initialise)
+    .catch(function () {});
 })();

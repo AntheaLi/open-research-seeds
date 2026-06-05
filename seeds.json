@@ -6,9 +6,10 @@
       "description": "Ideas about multimodal representation learning, world models, and cross-modal alignment."
     },
     {
-      "slug": "sensor-design",
-      "label": "Sensor Design",
-      "description": "Ideas about tactile sensing, embodied data, and task-driven hardware design."
+      "slug": "hardware",
+      "label": "Hardware",
+      "aliases": ["sensor-design"],
+      "description": "Ideas about tactile sensing, embodied data, and task-driven hardware."
     },
     {
       "slug": "model-architecture",
@@ -32,7 +33,7 @@
     },
     {
       "slug": "task-driven-sensor-design",
-      "topic": "sensor-design",
+      "topic": "hardware",
       "title": "Task-Driven Sensor Design",
       "hook": "Learn where to place tactile sensors by watching which manipulation tasks humans find easy.",
       "background": "Robotics + optimization",
