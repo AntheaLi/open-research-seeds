@@ -46,8 +46,11 @@ Every idea follows the same structure — see [`ideas/_template/README.md`](./id
 ## Materials (if any)
 ## Annotated Readings
 ## Estimated Background
+## Suggested Difficulty
 ## Discussion
 ```
+
+Use difficulty levels 1-5, where 1 is the easiest entry point and 5 is the hardest.
 
 ## Adding Materials
 

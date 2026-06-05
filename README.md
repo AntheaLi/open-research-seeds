@@ -24,10 +24,10 @@ Each idea lives in its own folder under [`ideas/`](./ideas/) with a standard car
 
 ## Idea Index
 
-| Idea | One-Line Hook | Background | Contributor |
-|------|--------------|------------|-------------|
-| [Kuramoto Multimodal Coupling](./ideas/kuramoto-multimodal-coupling/) | Learn cross-modal alignment through oscillatory synchronization, not contrastive loss | dynamical systems + multimodal ML | [Anthea Li](https://github.com/AntheaLi) |
-| [Task-Driven Sensor Design](./ideas/task-driven-sensor-design/) | Learn where to place tactile sensors by watching what humans find easy | robotics + optimization | [Anthea Li](https://github.com/AntheaLi) |
+| Idea | One-Line Hook | Background | Difficulty | Contributor |
+|------|--------------|------------|------------|-------------|
+| [Kuramoto Multimodal Coupling](./ideas/kuramoto-multimodal-coupling/) | Learn cross-modal alignment through oscillatory synchronization, not contrastive loss | dynamical systems + multimodal ML | 3/5 | [Anthea Li](https://github.com/AntheaLi) |
+| [Task-Driven Sensor Design](./ideas/task-driven-sensor-design/) | Learn where to place tactile sensors by watching what humans find easy | robotics + optimization | 4/5 | [Anthea Li](https://github.com/AntheaLi) |
 
 *More ideas welcome via [pull request](./CONTRIBUTING.md).*
 

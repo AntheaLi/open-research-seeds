@@ -39,6 +39,7 @@
         hook: 'Learn cross-modal representations through oscillatory synchronization dynamics instead of contrastive loss alignment.',
         background: 'Dynamical systems + multimodal ML',
         rampUp: '2-3 weeks',
+        difficulty: 3,
         contributor: 'Anthea Li',
         affiliation: 'MIT CSAIL',
         tags: ['multimodal', 'dynamics', 'representation learning'],
@@ -52,6 +53,7 @@
         hook: 'Learn where to place tactile sensors by watching which manipulation tasks humans find easy.',
         background: 'Robotics + optimization',
         rampUp: '3-4 weeks',
+        difficulty: 4,
         contributor: 'Anthea Li',
         affiliation: 'MIT CSAIL',
         tags: ['robotics', 'tactile sensing', 'optimization'],
@@ -197,6 +199,23 @@
     return seeds.filter(function (seed) { return seed.topic === topicSlug; });
   }
 
+  function renderDifficulty(seed) {
+    var rawLevel = parseInt(seed.difficulty, 10);
+    if (!rawLevel) return '';
+    var level = Math.max(1, Math.min(5, rawLevel));
+
+    var ticks = [1, 2, 3, 4, 5].map(function (tick) {
+      return '<span class="' + (tick <= level ? 'active' : '') + '"></span>';
+    }).join('');
+
+    return [
+      '<span class="seed-difficulty difficulty-' + level + '" title="Suggestive difficulty level ' + level + ' out of 5">',
+      '<span class="difficulty-label">Difficulty ' + level + '/5</span>',
+      '<span class="difficulty-scale" aria-hidden="true">' + ticks + '</span>',
+      '</span>'
+    ].join('');
+  }
+
   function renderTopicTabs() {
     topicTabs.innerHTML = topics.map(function (topic) {
       var count = getSeedsForTopic(topic.slug).length;
@@ -249,7 +268,10 @@
         '<button class="seed-card seed-row' + active + '" type="button" data-slug="' + escapeHtml(seed.slug) + '">',
         '<span class="seed-title-line">',
         '<strong>' + escapeHtml(seed.title) + '</strong>',
+        '<span class="seed-badges">',
         '<span class="seed-ramp">' + escapeHtml(seed.rampUp) + '</span>',
+        renderDifficulty(seed),
+        '</span>',
         '</span>',
         '<span class="seed-hook">' + escapeHtml(seed.hook) + '</span>',
         '<span class="seed-meta">',

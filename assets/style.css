@@ -67,6 +67,12 @@ h1 {
   font-size: 38px;
 }
 
+.hero h1 {
+  max-width: 100%;
+  font-size: 35px;
+  white-space: nowrap;
+}
+
 h2 { font-size: var(--title-font-size); }
 h3 { margin-top: 28px; font-size: 18px; }
 h4 { margin-top: 20px; font-size: 16px; }
@@ -237,6 +243,15 @@ h4 { margin-top: 20px; font-size: 16px; }
   gap: 12px;
 }
 
+.seed-badges {
+  display: inline-flex;
+  flex: 0 0 auto;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
+}
+
 .seed-ramp {
   flex: 0 0 auto;
   padding: 2px 8px;
@@ -245,6 +260,44 @@ h4 { margin-top: 20px; font-size: 16px; }
   color: #4f6172;
   font-size: 12px;
   font-weight: 600;
+}
+
+.seed-difficulty {
+  --difficulty-color: #15803d;
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: #ffffff;
+  box-shadow: inset 0 0 0 1px #dce6ef;
+  color: #4f6172;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.difficulty-1 { --difficulty-color: #15803d; }
+.difficulty-2 { --difficulty-color: #65a30d; }
+.difficulty-3 { --difficulty-color: #ca8a04; }
+.difficulty-4 { --difficulty-color: #ea580c; }
+.difficulty-5 { --difficulty-color: #dc2626; }
+
+.difficulty-scale {
+  display: inline-grid;
+  grid-template-columns: repeat(5, 5px);
+  gap: 2px;
+}
+
+.difficulty-scale span {
+  width: 5px;
+  height: 12px;
+  border-radius: 999px;
+  background: #dce6ef;
+}
+
+.difficulty-scale span.active {
+  background: var(--difficulty-color);
 }
 
 .seed-card strong {
@@ -404,6 +457,12 @@ h4 { margin-top: 20px; font-size: 16px; }
   color: var(--muted);
 }
 
+@media (max-width: 860px) {
+  .hero h1 {
+    white-space: normal;
+  }
+}
+
 @media (max-width: 720px) {
   .page-shell {
     width: min(100% - 22px, 920px);
@@ -424,6 +483,10 @@ h4 { margin-top: 20px; font-size: 16px; }
     align-items: flex-start;
     flex-direction: column;
     gap: 6px;
+  }
+
+  .seed-badges {
+    justify-content: flex-start;
   }
 
   .reader-topline {

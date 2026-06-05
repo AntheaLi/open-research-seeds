@@ -4,7 +4,8 @@
 
 **Contributor**: [Your Name](https://github.com/your-handle) · [Affiliation]  
 **Background needed**: [e.g., "dynamical systems + basic multimodal ML"]  
-**Estimated ramp-up**: [e.g., "~2 weeks to first experiment"]
+**Estimated ramp-up**: [e.g., "~2 weeks to first experiment"]  
+**Suggested difficulty**: [1-5, where 1 is easiest]
 
 ---
 
