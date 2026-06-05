@@ -22,9 +22,10 @@ The "difficulty" signal adds another layer: tasks that humans find effortlessly 
 
 ## Entry Point
 
-**Phase 1 — Task-Contact Mapping (simulation)**: Before touching real hardware, use existing grasping simulators (e.g., Isaac Gym / MuJoCo with contact-rich assets) to generate contact heatmaps across a hand mesh for a diverse task set. Use the ContactDB dataset or DexYCB as a starting point — both provide human grasp contact maps for many objects. Aggregate across tasks to build a "sensing demand map" over the hand surface.
+**Phase 1 — Task-Contact Mapping (simulation)**: Before touching real hardware, you can use existing grasping simulators (e.g., Isaac Gym / MuJoCo with contact-rich assets) to generate contact heatmaps across a hand mesh for a diverse task set. Use the ContactDB dataset or DexYCB as a starting point — both provide human grasp contact maps for many objects. Aggregate across tasks to build a "sensing demand map" over the hand surface. 
 
-**Phase 2 — Electrode Placement Optimization**: Formulate sensor placement as a discrete optimization problem. Given N electrodes to place on a hand surface, and a continuous contact importance map from Phase 1, maximize the expected task-relevant information captured. Start simple:
+**Phase 2 — Electrode Placement Optimization**: Formulate sensor placement as a discrete optimization problem. Given N electrodes to place on a hand surface, and a continuous contact importance map from Phase 1, maximize the expected task-relevant information captured, for example, your task can be object recognition from tactile maps. 
+Start simple:
 
 - Discretize the hand surface into candidate locations
 - Define a sensing model: each electrode senses within a radius with decaying sensitivity
@@ -32,6 +33,8 @@ The "difficulty" signal adds another layer: tasks that humans find effortlessly 
 - Constraints: minimum spacing between electrodes, maximum total count, manufacturing feasibility zones
 
 This can be solved with greedy submodular optimization (facility location) for a first pass, or differentiable relaxation for a smoother version.
+
+**Alternative to Phase 1 & 2**: You can write a differentiable electrode placement contact simulator. You can take hand meshes like mano hand and think of the hand as a manifold, and write the electrode placement 2D UV coordinates on the manifold. This would allow you to directly optimize the contact map with grasping and manipulation dataset with respect to the task, e.g. object recognition from tactile maps. 
 
 **Phase 3 — Validation**: Compare the optimized layout against (a) uniform grid placement, (b) biomimetic placement (matching human mechanoreceptor density), and (c) expert-designed layouts from existing tactile sensors (e.g., BioTac, GelSight). Evaluate on the same task set: which layout lets a downstream policy best discriminate task-relevant features?
 
