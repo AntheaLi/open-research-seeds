@@ -1,26 +1,47 @@
-[
-  {
-    "slug": "kuramoto-multimodal-coupling",
-    "title": "Kuramoto-Inspired Multimodal Coupling",
-    "hook": "Learn cross-modal representations through oscillatory synchronization dynamics instead of contrastive loss alignment.",
-    "background": "Dynamical systems + multimodal ML",
-    "rampUp": "2-3 weeks",
-    "contributor": "Anthea Li",
-    "affiliation": "MIT CSAIL",
-    "tags": ["multimodal", "dynamics", "representation learning"],
-    "readme": "ideas/kuramoto-multimodal-coupling/README.md",
-    "references": "ideas/kuramoto-multimodal-coupling/references.md"
-  },
-  {
-    "slug": "task-driven-sensor-design",
-    "title": "Task-Driven Sensor Design",
-    "hook": "Learn where to place tactile sensors by watching which manipulation tasks humans find easy.",
-    "background": "Robotics + optimization",
-    "rampUp": "3-4 weeks",
-    "contributor": "Anthea Li",
-    "affiliation": "MIT CSAIL",
-    "tags": ["robotics", "tactile sensing", "optimization"],
-    "readme": "ideas/task-driven-sensor-design/README.md",
-    "references": "ideas/task-driven-sensor-design/references.md"
-  }
-]
+{
+  "topics": [
+    {
+      "slug": "multimodal-learning",
+      "label": "Multimodal Learning",
+      "description": "Ideas about multimodal representation learning, world models, and cross-modal alignment."
+    },
+    {
+      "slug": "sensor-design",
+      "label": "Sensor Design",
+      "description": "Ideas about tactile sensing, embodied data, and task-driven hardware design."
+    },
+    {
+      "slug": "model-architecture",
+      "label": "Model Architecture",
+      "description": "Ideas about mechanisms, efficient architectures, and hardware-aware model design."
+    }
+  ],
+  "seeds": [
+    {
+      "slug": "kuramoto-multimodal-coupling",
+      "topic": "multimodal-learning",
+      "title": "Kuramoto-Inspired Multimodal Coupling",
+      "hook": "Learn cross-modal representations through oscillatory synchronization dynamics instead of contrastive loss alignment.",
+      "background": "Dynamical systems + multimodal ML",
+      "rampUp": "2-3 weeks",
+      "contributor": "Anthea Li",
+      "affiliation": "MIT CSAIL",
+      "tags": ["multimodal", "dynamics", "representation learning"],
+      "readme": "ideas/kuramoto-multimodal-coupling/README.md",
+      "references": "ideas/kuramoto-multimodal-coupling/references.md"
+    },
+    {
+      "slug": "task-driven-sensor-design",
+      "topic": "sensor-design",
+      "title": "Task-Driven Sensor Design",
+      "hook": "Learn where to place tactile sensors by watching which manipulation tasks humans find easy.",
+      "background": "Robotics + optimization",
+      "rampUp": "3-4 weeks",
+      "contributor": "Anthea Li",
+      "affiliation": "MIT CSAIL",
+      "tags": ["robotics", "tactile sensing", "optimization"],
+      "readme": "ideas/task-driven-sensor-design/README.md",
+      "references": "ideas/task-driven-sensor-design/references.md"
+    }
+  ]
+}

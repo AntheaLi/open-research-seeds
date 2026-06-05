@@ -54,16 +54,18 @@
     <section class="section" id="ideas">
       <div class="section-heading">
         <h2>Seed Index</h2>
-        <p>Choose a seed to read the full writeup and annotated reading list.</p>
+        <p>Choose a topic, then open a seed when something looks useful.</p>
       </div>
-      <div class="seed-grid" id="seed-grid" aria-live="polite"></div>
+      <div class="topic-tabs" id="topic-tabs" role="tablist" aria-label="Research seed topics"></div>
+      <div class="topic-summary" id="topic-summary" aria-live="polite"></div>
+      <div class="seed-list" id="seed-grid" aria-live="polite"></div>
     </section>
 
-    <section class="section seed-reader" id="seed-reader" aria-live="polite">
+    <section class="section seed-reader is-folded" id="seed-reader" aria-live="polite">
       <div class="reader-topline">
         <div>
           <p class="eyebrow">Selected Seed</p>
-          <h2 id="reader-title">Loading seeds...</h2>
+          <h2 id="reader-title">Select a seed to open the full writeup.</h2>
         </div>
         <div class="reader-tabs" role="tablist" aria-label="Seed detail views">
           <button class="reader-tab active" type="button" data-view="overview">Overview</button>

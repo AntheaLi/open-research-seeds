@@ -22,7 +22,7 @@ Ideas you're actively pursuing don't belong here. Ideas you've *tried* and aband
 2. Copy `ideas/_template/` to `ideas/your-idea-name/`
 3. Fill in the template — see existing ideas for calibration
 4. Add any materials (slides, code, figures) to your idea folder
-5. Add an entry to `seeds.json` so the website can render the idea
+5. Add an entry to `seeds.json` so the website can render the idea under the right topic
 6. Open a pull request
 
 Your PR description should include a one-paragraph summary of the idea. We'll review for clarity and quality, possibly suggest edits, and merge once it's ready.
@@ -72,6 +72,7 @@ add one metadata entry:
 ```json
 {
   "slug": "your-idea-name",
+  "topic": "model-architecture",
   "title": "Your Idea Title",
   "hook": "One sentence that makes the idea legible and interesting.",
   "background": "required background",
@@ -84,7 +85,10 @@ add one metadata entry:
 }
 ```
 
-Keep the `slug` identical to the folder name so deep links work.
+Keep the `slug` identical to the folder name so deep links work. The `topic`
+must match one of the topic slugs in the top-level `topics` list in
+`seeds.json` such as `multimodal-learning`, `sensor-design`, or
+`model-architecture`.
 
 ## Review Process
 
