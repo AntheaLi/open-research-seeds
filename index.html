@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="Open Research Seeds">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Open Research Seeds</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <main class="page-shell">
+    <header class="hero">
+      <p class="eyebrow">Open Research Seeds</p>
+      <h1>Concrete research ideas, free to good homes.</h1>
+      <p class="hero-copy">
+        A curated collection of research directions for junior Ph.D. students:
+        each seed includes the intuition, a first experiment, risks, and readings
+        so the idea is actionable rather than just inspirational.
+      </p>
+      <div class="hero-actions" aria-label="Primary links">
+        <a href="#ideas">Browse seeds</a>
+        <a href="CONTRIBUTING.md">Contribute an idea</a>
+        <a href="https://github.com/AntheaLi/open-research-seeds">GitHub repo</a>
+      </div>
+    </header>
+
+    <section class="section intro-grid" aria-label="How this works">
+      <article>
+        <h2>For junior researchers</h2>
+        <p>
+          Pick a seed, read the entry point, and start with the smallest experiment.
+          Each idea is meant to be open enough to become your own project.
+        </p>
+      </article>
+      <article>
+        <h2>For contributors</h2>
+        <p>
+          Senior students and researchers can add ideas through pull requests.
+          Use the template so every seed has a clear hook, background, and first step.
+        </p>
+      </article>
+      <article>
+        <h2>For collaborators</h2>
+        <p>
+          Use GitHub Discussions to claim interest, ask questions, and coordinate
+          with others before duplicating effort.
+        </p>
+      </article>
+    </section>
+
+    <section class="section" id="ideas">
+      <div class="section-heading">
+        <h2>Seed Index</h2>
+        <p>Choose a seed to read the full writeup and annotated reading list.</p>
+      </div>
+      <div class="seed-grid" id="seed-grid" aria-live="polite"></div>
+    </section>
+
+    <section class="section seed-reader" id="seed-reader" aria-live="polite">
+      <div class="reader-topline">
+        <div>
+          <p class="eyebrow">Selected Seed</p>
+          <h2 id="reader-title">Loading seeds...</h2>
+        </div>
+        <div class="reader-tabs" role="tablist" aria-label="Seed detail views">
+          <button class="reader-tab active" type="button" data-view="overview">Overview</button>
+          <button class="reader-tab" type="button" data-view="references">Readings</button>
+        </div>
+      </div>
+      <article class="markdown-body" id="reader-content"></article>
+    </section>
+
+    <section class="section contribute-panel">
+      <div>
+        <h2>Add a seed</h2>
+        <p>
+          Copy the template, write the idea card, add readings, and open a pull request.
+          The goal is not guaranteed feasibility; it is a clear mechanism and a runnable
+          first experiment.
+        </p>
+      </div>
+      <ol>
+        <li>Copy <code>ideas/_template/</code> to <code>ideas/your-idea-name/</code>.</li>
+        <li>Fill in <code>README.md</code> and <code>references.md</code>.</li>
+        <li>Add one entry to <code>seeds.json</code>.</li>
+        <li>Open a pull request and start a Discussion thread if you want collaborators.</li>
+      </ol>
+    </section>
+  </main>
+
+  <script src="assets/site.js"></script>
+</body>
+</html>
