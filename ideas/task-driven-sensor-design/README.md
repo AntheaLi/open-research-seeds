@@ -3,7 +3,9 @@
 > **One-sentence hook**: Instead of designing tactile sensors from engineering intuition, learn where to place electrodes by watching which tasks humans find easy and reverse-engineering what sensing makes that possible.
 
 **Contributor**: [Anthea Li](https://github.com/AntheaLi) · MIT CSAIL  
+
 **Background needed**: robotics (grasping basics) + optimization (differentiable programming or Bayesian optimization)  
+
 **Estimated ramp-up**: ~3–4 weeks to first experiment (sensor simulation is the bottleneck)
 
 ---
