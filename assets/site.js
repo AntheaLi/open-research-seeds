@@ -16,8 +16,13 @@
     topics: [
       {
         slug: 'multimodal-learning',
-        label: 'Multimodal Learning',
+        label: 'Multimodal',
         description: 'Ideas about multimodal representation learning, world models, and cross-modal alignment.'
+      },
+      {
+        slug: 'video',
+        label: 'Video',
+        description: 'Ideas about video representations, visual dynamics, and learning physics from pixels.'
       },
       {
         slug: 'hardware',
@@ -35,7 +40,7 @@
       {
         slug: 'kuramoto-multimodal-coupling',
         topic: 'multimodal-learning',
-        title: 'Kuramoto-Inspired Multimodal Coupling',
+        title: 'Self-Supervised Multimodal Learning with Kuramoto Coupling',
         hook: 'Learn cross-modal representations through oscillatory synchronization dynamics instead of contrastive loss alignment.',
         background: 'Dynamical systems + multimodal ML',
         rampUp: '2-3 weeks',
@@ -45,6 +50,20 @@
         tags: ['multimodal', 'dynamics', 'representation learning'],
         readme: 'ideas/kuramoto-multimodal-coupling/README.md',
         references: 'ideas/kuramoto-multimodal-coupling/references.md'
+      },
+      {
+        slug: 'physics-from-video-gaussians',
+        topic: 'video',
+        title: 'Physics from Video via Dynamic Gaussians',
+        hook: 'Fit 2D dynamic Gaussians to video as a learned discretization, then run DMD/SINDy to recover governing equations.',
+        background: 'Gaussian splatting + dynamical systems',
+        rampUp: '2-3 weeks',
+        difficulty: 4,
+        contributor: 'Anthea Li',
+        affiliation: 'MIT CSAIL',
+        tags: ['video', 'gaussian splatting', 'physics'],
+        readme: 'ideas/physics-from-video-gaussians/README.md',
+        references: 'ideas/physics-from-video-gaussians/references.md'
       },
       {
         slug: 'task-driven-sensor-design',
@@ -382,7 +401,7 @@
 
   initialise(fallbackData);
 
-  fetch('seeds.json')
+  fetch('seeds.json?v=20260605-multimodal-label')
     .then(function (response) {
       if (!response.ok) throw new Error('Could not load seeds.json');
       return response.json();

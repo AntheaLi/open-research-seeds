@@ -27,6 +27,7 @@ Each idea lives in its own folder under [`ideas/`](./ideas/) with a standard car
 | Idea | One-Line Hook | Background | Difficulty | Contributor |
 |------|--------------|------------|------------|-------------|
 | [Kuramoto Multimodal Coupling](./ideas/kuramoto-multimodal-coupling/) | Learn cross-modal alignment through oscillatory synchronization, not contrastive loss | dynamical systems + multimodal ML | 3/5 | [Anthea Li](https://github.com/AntheaLi) |
+| [Physics from Video via Dynamic Gaussians](./ideas/physics-from-video-gaussians/) | Fit 2D dynamic Gaussians to video as a learned discretization, then run DMD/SINDy to recover governing equations | Gaussian splatting + dynamical systems | 4/5 | [Anthea Li](https://github.com/AntheaLi) |
 | [Task-Driven Sensor Design](./ideas/task-driven-sensor-design/) | Learn where to place tactile sensors by watching what humans find easy | robotics + optimization | 4/5 | [Anthea Li](https://github.com/AntheaLi) |
 
 *More ideas welcome via [pull request](./CONTRIBUTING.md).*
