@@ -21,7 +21,7 @@
     {
       "slug": "kuramoto-multimodal-coupling",
       "topic": "multimodal-learning",
-      "title": "Kuramoto-Inspired Multimodal Coupling",
+      "title": "Self-Supervised Multimodal Learning with Kuramoto Coupling",
       "hook": "Learn cross-modal representations through oscillatory synchronization dynamics instead of contrastive loss alignment.",
       "background": "Dynamical systems + multimodal ML",
       "rampUp": "2-3 weeks",
