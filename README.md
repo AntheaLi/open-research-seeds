@@ -1,6 +1,6 @@
 # Research Seeds 🌱
 
-**Concrete research ideas, free to good homes.**
+**Research Ideas that Can't be Outscaled on.**
 
 Academic ML research is in a difficult moment. The problems that attract the most attention — scaling frontier models, massive RL runs, billion-parameter video generation — are increasingly defined by compute budgets that no university lab can match. Junior PhD students feel this acutely: it's hard to commit years to a direction when an industry lab might ship something similar next quarter with 1,000× your resources.
 
