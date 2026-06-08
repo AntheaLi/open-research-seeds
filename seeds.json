@@ -38,9 +38,9 @@
       "references": "ideas/kuramoto-multimodal-coupling/references.md"
     },
     {
-      "slug": "physics-from-video-gaussians",
+      "slug": "physics-from-video-dmd",
       "topic": "video",
-      "title": "Physics from Video via Dynamic Gaussians",
+      "title": "Physics from Video via Dynamic Mode Decomposition",
       "hook": "Fit 2D dynamic Gaussians to video as a learned discretization, then run DMD/SINDy to recover governing equations.",
       "background": "Gaussian splatting + dynamical systems",
       "rampUp": "2-3 weeks",
