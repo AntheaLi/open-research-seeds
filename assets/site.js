@@ -92,13 +92,28 @@
   }
 
   function renderInline(value) {
-    return escapeHtml(value)
+    // Extract inline math ($...$) before escaping so LaTeX isn't mangled
+    var mathParts = [];
+    var processed = value.replace(/\$([^\$\n]+?)\$/g, function (_, latex) {
+      var idx = mathParts.length;
+      mathParts.push(latex);
+      return '%%IMATH_' + idx + '%%';
+    });
+
+    processed = escapeHtml(processed)
       .replace(/`([^`]+)`/g, '<code>$1</code>')
       .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
       .replace(/\*([^*]+)\*/g, '<em>$1</em>')
       .replace(/\[([^\]]+)\]\(([^)]+)\)/g, function (_, text, href) {
         return '<a href="' + escapeHtml(href) + '">' + text + '</a>';
       });
+
+    // Replace math placeholders with KaTeX-renderable spans
+    processed = processed.replace(/%%IMATH_(\d+)%%/g, function (_, idx) {
+      return '<span class="math-inline" data-math="' + escapeHtml(mathParts[parseInt(idx, 10)]) + '"></span>';
+    });
+
+    return processed;
   }
 
   function flushParagraph(parts, output) {
@@ -114,6 +129,8 @@
     var listType = null;
     var inCode = false;
     var codeLines = [];
+    var inMath = false;
+    var mathLines = [];
 
     function closeList() {
       if (!listType) return;
@@ -139,6 +156,26 @@
 
       if (inCode) {
         codeLines.push(line);
+        return;
+      }
+
+      // Display math: $$ ... $$
+      if (trimmed === '$$') {
+        if (inMath) {
+          var mathStr = mathLines.join('\n');
+          output.push('<div class="math-display" data-math="' + escapeHtml(mathStr) + '"></div>');
+          mathLines = [];
+          inMath = false;
+        } else {
+          flushParagraph(paragraph, output);
+          closeList();
+          inMath = true;
+        }
+        return;
+      }
+
+      if (inMath) {
+        mathLines.push(line);
         return;
       }
 
@@ -202,6 +239,16 @@
     flushParagraph(paragraph, output);
     closeList();
     return output.join('\n');
+  }
+
+  function renderMath(container) {
+    if (typeof katex === 'undefined') return;
+    Array.prototype.slice.call(container.querySelectorAll('.math-display')).forEach(function (el) {
+      try { katex.render(el.getAttribute('data-math'), el, { displayMode: true, throwOnError: false }); } catch (e) {}
+    });
+    Array.prototype.slice.call(container.querySelectorAll('.math-inline')).forEach(function (el) {
+      try { katex.render(el.getAttribute('data-math'), el, { displayMode: false, throwOnError: false }); } catch (e) {}
+    });
   }
 
   function getTopic(slug) {
@@ -358,6 +405,7 @@
       })
       .then(function (markdown) {
         readerContent.innerHTML = markdownToHtml(markdown);
+        renderMath(readerContent);
         history.replaceState(null, '', '#' + activeSeed.slug);
       })
       .catch(function () {

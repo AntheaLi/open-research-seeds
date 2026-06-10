@@ -35,7 +35,14 @@ where $\theta_i$ are oscillator phases, $\omega_i$ are natural frequencies (lear
 Writing out the different kinds of kuramoto model: 
 
 $$
-\frac{d\theta_i}{dt} = \omega_i + \sum_{j} K_{ij} \sin(\theta_j - \theta_i) \quad \rightarrow \quad \begin{aligned} \frac{d\theta_i}{dt} &= \omega_i + \frac{K}{N} \sum_{j=1}^{N} \sin(h\theta_j - p\theta_i) \\ \frac{d\theta}{dt} &= \omega + K \sin(\Omega t - \theta) \\ \frac{d\theta_i}{dt} &= \omega_i + \frac{K}{N} \sum_{j=1}^{N} \sin(\theta_j(t - \tau) - \theta_i(t)) \\ \frac{dA_i}{dt} &= f(A_i, \theta_k) \\ \frac{d\theta_k}{dt} &= \omega_k + K A_i \sin(\theta_i - \theta_k) \end{aligned}
+\frac{d\theta_i}{dt} = \omega_i + \sum_{j} K_{ij} \sin(\theta_j - \theta_i) \quad \rightarrow \quad
+\begin{aligned}
+\frac{d\theta_i}{dt} &= \omega_i + \frac{K}{N} \sum_{j=1}^{N} \sin(h\theta_j - p\theta_i) \\[1ex]
+\frac{d\theta}{dt} &= \omega + K \sin(\Omega t - \theta) \\[1ex]
+\frac{d\theta_i}{dt} &= \omega_i + \frac{K}{N} \sum_{j=1}^{N} \sin(\theta_j(t - \tau) - \theta_i(t)) \\[1ex]
+\frac{dA_i}{dt} &= f(A_i, \theta_k) \\[1ex]
+\frac{d\theta_k}{dt} &= \omega_k + K A_i \sin(\theta_i - \theta_k)
+\end{aligned}
 $$
 
 **Data**: Start with a paired image-text dataset (e.g., CC3M or a subset). Straightforward to extend to audio-visual (VGGSound) or video-text later.
