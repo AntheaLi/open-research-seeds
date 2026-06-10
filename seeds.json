@@ -19,7 +19,7 @@
     {
       "slug": "model-architecture",
       "label": "Model Architecture",
-      "description": "Ideas about mechanisms, efficient architectures, and hardware-aware model design."
+      "description": "Ideas about mechanisms."
     }
   ],
   "seeds": [
