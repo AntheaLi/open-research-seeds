@@ -32,6 +32,20 @@ dθ_i/dt = ω_i + (K/N) Σ_j sin(θ_j - θ_i)
 
 where θ_i are oscillator phases, ω_i are natural frequencies (learnable), and K is coupling strength. Run this for T steps on paired multimodal inputs. The coupling matrix K can be made input-dependent (conditioned on both modalities' embeddings) for richer dynamics.
 
+Writing out the different kinds of kuramoto model: 
+
+$$
+\frac{d\theta_i}{dt} = \omega_i + \sum_{j} K_{ij} \sin(\theta_j - \theta_i),
+\quad \rightarrow \quad
+\begin{aligned}
+\frac{d\theta_i}{dt} &= \omega_i + \frac{K}{N} \sum_{j=1}^{N} \sin(h\theta_j - p\theta_i), \\[1ex]
+\frac{d\theta}{dt} &= \omega + K \sin(\Omega t - \theta), \\[1ex]
+\frac{d\theta_i}{dt} &= \omega_i + \frac{K}{N} \sum_{j=1}^{N} \sin(\theta_j(t - \tau) - \theta_i(t)), \\[1ex]
+\frac{dA_i}{dt} &= f(A_i, \theta_k), \\[1ex]
+\frac{d\theta_k}{dt} &= \omega_k + K A_i \sin(\theta_i - \theta_k),
+\end{aligned}
+$$
+
 **Data**: Start with a paired image-text dataset (e.g., CC3M or a subset). Straightforward to extend to audio-visual (VGGSound) or video-text later.
 
 **Training signal**: After running the ODE for T steps, measure the *order parameter* r = |1/N Σ exp(iθ_j)| — a scalar in [0,1] measuring synchronization. For matched pairs, r should be high; for mismatched pairs, low. This gives you a contrastive-like objective but one that emerges from the dynamics rather than being imposed.
@@ -47,7 +61,7 @@ where θ_i are oscillator phases, ω_i are natural frequencies (learnable), and 
 
 ## Materials
 
-- 📊 *Slides coming soon*
+- 📊 Slides: [motivation & framework slides](https://docs.google.com/presentation/d/1LqyTUMEEqz7_L5pqlvKz1VhwKqNeN86g/edit?usp=sharing&ouid=116375270758487007474&rtpof=true&sd=true)
 
 ## Annotated Readings
 
